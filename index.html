@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101b35">
+  <meta name="description" content="GURU JI AI - YouTube story production assistant">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>GURU JI AI – YouTube Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brandmark">GJ</div>
+    <div><h1>GURU JI AI</h1><p>Your YouTube Creation Assistant</p></div>
+    <span class="status" id="status">Ready</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL YOUTUBE STUDIO</p>
+      <h2>Idea se video tak,<br><span>ek hi jagah.</span></h2>
+      <p>Story, Hindi voiceover, 3D scene prompts, title aur description taiyaar karein.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><h2>1. Project details</h2><span class="step">01</span></div>
+      <label>Video topic / story idea</label>
+      <textarea id="topic" rows="3">शहर की चमक या गाँव का सुकून — मोहन की कहानी</textarea>
+      <div class="two">
+        <div><label>Channel niche</label>
+          <select id="niche">
+            <option>Hindi moral stories</option>
+            <option>Health & Fitness</option>
+            <option>Village life stories</option>
+            <option>Motivational stories</option>
+            <option>Kids stories</option>
+          </select>
+        </div>
+        <div><label>Target audience</label>
+          <select id="audience">
+            <option>Hindi-speaking viewers</option>
+            <option>USA audience (English)</option>
+            <option>Indian families</option>
+            <option>Children and families</option>
+          </select>
+        </div>
+      </div>
+      <div class="two">
+        <div><label>Video length</label>
+          <select id="length"><option>2–3 minutes</option><option>1 minute</option><option>5–8 minutes</option></select>
+        </div>
+        <div><label>Visual style</label>
+          <select id="style"><option>3D Pixar-inspired cartoon</option><option>Realistic cinematic</option><option>2D animation</option></select>
+        </div>
+      </div>
+      <label>Voiceover language</label>
+      <select id="language"><option>Hindi</option><option>Punjabi</option><option>English</option><option>Hindi and Punjabi</option></select>
+      <button class="primary" id="generate">✦ Generate video package</button>
+      <p class="hint">AI output ke liye Gemini API key chahiye. Aap chahein to pehle demo mode use kar sakte hain.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><h2>2. AI connection</h2><span class="step">02</span></div>
+      <label>Gemini API key</label>
+      <input id="apiKey" type="password" placeholder="Paste your Gemini API key">
+      <div class="two">
+        <button class="secondary" id="saveKey">Save on this device</button>
+        <button class="secondary" id="clearKey">Remove key</button>
+      </div>
+      <p class="warning">Prototype safety: key is stored only in this browser's local storage and is not protected like a server secret. Use only for private testing. Do not share this app or publish it with a personal key. For public use, add a secure backend proxy.</p>
+      <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Get a Gemini API key ↗</a>
+    </section>
+
+    <section class="panel results" id="resultsPanel">
+      <div class="section-head"><h2>3. Your production package</h2><span class="step">03</span></div>
+      <div id="empty" class="empty">Abhi koi package nahi bana. Upar topic likhkar Generate dabayein.</div>
+      <div id="output" class="output" hidden></div>
+      <div class="two">
+        <button class="secondary" id="copyAll">Copy all</button>
+        <button class="secondary" id="download">Download .txt</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><h2>4. Publishing checklist</h2><span class="step">04</span></div>
+      <label class="check"><input type="checkbox"> Voiceover checked</label>
+      <label class="check"><input type="checkbox"> Visuals and music rights checked</label>
+      <label class="check"><input type="checkbox"> Health/factual claims verified (if applicable)</label>
+      <label class="check"><input type="checkbox"> Title, thumbnail and description reviewed</label>
+      <label class="check"><input type="checkbox"> Final video watched before publishing</label>
+      <p class="hint">MVP abhi video render ya auto-upload nahi karta. Ye complete production plan banata hai; final editing CapCut jaise editor mein karein.</p>
+    </section>
+  </main>
+  <footer>GURU JI AI · Personal YouTube workflow MVP · v1.0</footer>
+  <script src="app.js"></script>
+</body>
+</html>
